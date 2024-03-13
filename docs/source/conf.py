@@ -14,11 +14,20 @@ release = '[1.0.0]'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
-
+extensions = [
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+]
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+}
 templates_path = ['_templates']
 exclude_patterns = []
-
+intersphinx_disabled_domains = ['std']
 language = 'zh_CN'
 
 # -- Options for HTML output -------------------------------------------------
